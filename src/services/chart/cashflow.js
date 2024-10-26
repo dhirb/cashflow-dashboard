@@ -7,6 +7,8 @@ export const buildCashflowEntriesData = (project) => {
   const data = {}
 
   for (const entry of entries) {
+    if (entry.isOneOff && new Date(entry.start) < new Date(project.start)) continue
+
     const dates = generateEntryOccurrences(entry, project.start, project.end)
 
     for (const date of dates) {
