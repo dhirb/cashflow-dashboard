@@ -51,10 +51,11 @@ export const formatScheduleMonthDay = (day) => {
 }
 
 export const financialNumber = (val, isNegative) => {
+  const parsedVal = parseFloat(val.toString().replace(/,/g, ''))
   if (isNegative) {
-    return `(${formatCurrency(val)})`
+    return `(${formatCurrency(parsedVal)})`
   }
-  return formatCurrency(val)
+  return formatCurrency(parsedVal)
 }
 
 export const formatCurrency = (val, decimal = 2) => {

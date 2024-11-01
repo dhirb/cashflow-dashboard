@@ -44,11 +44,11 @@ const props = defineProps({
   tabindex: { type: Number, default: null },
   iconAlign: String,
   tooltip: String,
+  rounded: { type: String, default: 'rounded' },
   small: Boolean,
   outline: Boolean,
   active: Boolean,
   disabled: Boolean,
-  roundedFull: Boolean,
   noBorder: Boolean
 })
 
@@ -90,7 +90,7 @@ const componentClass = computed(() => {
     'duration-150',
     props.noBorder ? 'border-none' : 'border',
     props.disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-    props.roundedFull ? 'rounded-full' : 'rounded',
+    props.rounded,
     getButtonColor(props.color, props.outline, !props.disabled, props.active)
   ]
 

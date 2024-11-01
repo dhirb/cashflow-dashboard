@@ -96,7 +96,7 @@ const externalTooltipHandler = (context) => {
     const tableBody = document.createElement('tbody')
     const entries = chartData.value.entriesData[tooltip.title[0]]
 
-    entries.forEach((entry) => {
+    entries?.forEach((entry) => {
       const tr = document.createElement('tr')
       tr.style.backgroundColor = 'inherit'
 
@@ -121,10 +121,10 @@ const externalTooltipHandler = (context) => {
 
   // Display, position, and set styles for font
   tooltipEl.style.opacity = 1
-  tooltipEl.style.left = positionX + tooltip.caretX + 'px'
-  tooltipEl.style.top = positionY + tooltip.caretY + 'px'
+  tooltipEl.style.left = `${positionX + tooltip.caretX + 50}px`
+  tooltipEl.style.top = `${positionY + tooltip.caretY}px`
   tooltipEl.style.font = tooltip.options.bodyFont.string
-  tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px'
+  tooltipEl.style.padding = `${tooltip.options.padding}px ${tooltip.options.padding}px`
 }
 
 const chartOptions = {

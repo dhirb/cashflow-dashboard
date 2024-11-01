@@ -1,4 +1,6 @@
 <script setup>
+import BaseButton from '@/components/BaseButton.vue'
+import BaseButtons from '@/components/BaseButtons.vue'
 import CashflowEntryContainer from '@/components/Cashflow/CashflowEntryContainer.vue'
 import ProjectInfoContainer from '@/components/Cashflow/ProjectInfoContainer.vue'
 import CashflowChart from '@/components/Charts/CashflowChart.vue'
@@ -41,15 +43,25 @@ onUnmounted(() => {
       <div class="flex flex-col md:flex-row gap-4 w-full md:max-h-screen">
         <div class="flex flex-col w-full">
           <ProjectInfoContainer />
-          <div class="flex flex-col max-h-max">
-            <FormCheckRadio
-              v-model="isChartView"
-              :input-value="isChartView"
-              name="chartToggle"
-              type="switch"
-              :label="isChartView ? 'View table' : 'View chart'"
-              class="self-end mb-4"
+          <BaseButtons type="justify-end" mb="mb-4" class-addon="">
+            <BaseButton
+              label="Chart"
+              class="m-0 mr-0.5"
+              small
+              rounded=""
+              :color="isChartView ? 'info' : 'white'"
+              @click.prevent="() => (isChartView = true)"
             />
+            <BaseButton
+              label="Table"
+              class="m-0"
+              small
+              rounded=""
+              :color="isChartView ? 'white' : 'info'"
+              @click.prevent="() => (isChartView = false)"
+            />
+          </BaseButtons>
+          <div class="flex flex-col max-h-max">
             <CashflowChart
               v-if="isChartView"
               class="min-h-fit max-h-96 w-full md:max-w-xl lg:max-w-4xl xl:max-w-6xl"

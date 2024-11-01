@@ -96,7 +96,7 @@ window.addEventListener('keydown', (e) => {
           :icon="mdiClose"
           color="whiteDark"
           small
-          rounded-full
+          rounded="rounded-full"
           @click.prevent="cancel"
         />
       </CardBoxComponentTitle>
