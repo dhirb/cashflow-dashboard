@@ -132,6 +132,7 @@ const chartOptions = {
   maintainAspectRatio: false,
   scales: {
     y: {
+      beginAtZero: true,
       grid: {
         color: ({ tick }) => (tick.value === 0 ? numericColors.NEGATIVE : '')
       }
