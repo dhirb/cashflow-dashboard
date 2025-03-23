@@ -7,7 +7,7 @@ const props = defineProps({
 })
 
 const componentClass = computed(() => {
-  const base = ['mt-4', 'p-4', 'rounded', 'border-4']
+  const base = ['mt-4', 'p-4', 'rounded-sm', 'border-4']
 
   if (borderColors[props.severity]) {
     base.push(borderColors[props.severity])

@@ -12,7 +12,7 @@ const props = defineProps({
   >
     <div class="relative w-full">
       <!-- Modal content -->
-      <div class="relative bg-slate-100 rounded-lg shadow dark:bg-slate-700">
+      <div class="relative bg-slate-100 rounded-lg shadow-sm dark:bg-slate-700">
         <!-- Modal header -->
         <div class="flex items-center justify-between p-4 border-b rounded-t dark:border-gray-600">
           <h3 v-if="props.title" class="text-xl font-semibold text-gray-900 dark:text-white">

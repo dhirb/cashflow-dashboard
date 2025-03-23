@@ -42,7 +42,7 @@ const formatRule = () => {
   <CardBox
     has-component-layout
     class="w-full h-full p-2"
-    rounded="rounded"
+    rounded="rounded-sm"
     thin-border
     :border-color="props.entry.isExpense ? 'warning' : 'success'"
   >
