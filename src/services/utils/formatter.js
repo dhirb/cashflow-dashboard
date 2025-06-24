@@ -66,5 +66,5 @@ export const formatCurrency = (val, decimal = 2) => {
       minimumFractionDigits: decimal,
       maximumFractionDigits: decimal
     })
-    .replace('$', '$ ')
+    .replace(/\$/g, '$ ')
 }
