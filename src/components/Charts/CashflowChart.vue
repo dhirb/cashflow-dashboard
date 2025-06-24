@@ -83,13 +83,15 @@ const externalTooltipHandler = (context) => {
   // Set Text
   if (tooltip.body) {
     const currentAmount = tooltip.body[0].lines[0]
+    // Remove thousand separator before converting to number
+    const isAmountNegative = Number(currentAmount.replace(/,/g, '')) < 0
 
     const tableHead = document.createElement('thead')
     tableHead.appendChild(createTooltipTitleLine(dateToHuman(tooltip.title[0], true)))
     tableHead.appendChild(
       createTooltipTitleLine(
-        financialNumber(currentAmount, currentAmount < 0),
-        currentAmount < 0 ? numericColors.NEGATIVE : numericColors.POSITIVE
+        financialNumber(currentAmount, isAmountNegative),
+        isAmountNegative ? numericColors.NEGATIVE : numericColors.POSITIVE
       )
     )
 
