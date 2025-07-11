@@ -1,5 +1,7 @@
 # Cashflow Dashboard
 
+![alt text](dashboard_screenshot.png 'Screenshot of the Cashflow Dashboard')
+
 Credits to [https://github.com/justboil/admin-one-vue-tailwind](https://github.com/justboil/admin-one-vue-tailwind) for providing the UI template for this project.
 
 ### Vite builds
