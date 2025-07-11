@@ -1,5 +1,7 @@
 # Cashflow Dashboard
 
+Credits to [https://github.com/justboil/admin-one-vue-tailwind](https://github.com/justboil/admin-one-vue-tailwind) for providing the UI template for this project.
+
 ### Vite builds
 
 [Vite](https://vitejs.dev) is next Generation Frontend Tooling featuring unbundled web-development

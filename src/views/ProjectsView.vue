@@ -65,7 +65,7 @@ const pagesList = computed(() => {
       <CardBox v-if="projects.length === 0">
         <CardBoxComponentEmpty />
       </CardBox>
-      <CardBox v-else class="mb-6" has-table>
+      <CardBox v-else class="mb-6" has-table thin-border>
         <table aria-describedby="List of projects">
           <thead>
             <tr>

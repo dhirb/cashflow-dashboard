@@ -25,8 +25,8 @@ const value = computed({
     title=""
     done-button-label=""
     :interactive="false"
-    z-index="z-1000"
-    class="absolute h-screen opacity-80 inset-0"
+    z-index="z-9999"
+    class="absolute h-screen inset-0"
   >
     <ProgressSpin />
     <p class="text-center dark:text-white pb-4">{{ props.text }}</p>

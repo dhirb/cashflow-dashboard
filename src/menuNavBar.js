@@ -15,6 +15,9 @@ export default [
     isCurrentUser: true,
     menu: [
       {
+        displayUsername: true
+      },
+      {
         icon: mdiLogout,
         label: 'Log Out',
         isLogout: true

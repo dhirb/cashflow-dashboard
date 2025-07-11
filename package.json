@@ -17,7 +17,7 @@
     "@rschedule/standard-date-adapter": "^1.5.0",
     "chart.js": "^4.5.0",
     "chartjs-plugin-zoom": "^2.2.0",
-    "firebase": "^11.9.1",
+    "firebase": "^11.10.0",
     "hammerjs": "^2.0.8",
     "pinia": "^3.0.3",
     "vue": "^3.5.17",
@@ -26,14 +26,14 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.11",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/eslint-config-prettier": "^10.2.0",
-    "eslint": "^9.29.0",
-    "eslint-plugin-vue": "^10.2.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-vue": "^10.3.0",
     "postcss": "^8.5.6",
-    "prettier": "^3.6.0",
-    "tailwindcss": "^4.1.10",
-    "vite": "^7.0.0"
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.4"
   }
 }
