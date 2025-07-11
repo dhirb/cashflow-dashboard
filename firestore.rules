@@ -11,8 +11,10 @@ service cloud.firestore {
     }
 
     match /projects/{project} {
-      allow list, create: if isSignedIn();
-      allow get, update: if isSignedIn() && request.auth.uid in resource.data.allowedUsers;
+      allow create: if isSignedIn();
+
+      // Users can only read or update their own cashflow project
+      allow read, update: if isSignedIn() && request.auth.uid in resource.data.allowedUsers;
     }
   }
 }
