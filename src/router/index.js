@@ -80,7 +80,7 @@ router.beforeEach(async (to) => {
         return { name: 'login', query: { from: loginPath } }
       }
     }
-  } catch (error) {
+  } catch (_) {
     return '/error'
   }
 })

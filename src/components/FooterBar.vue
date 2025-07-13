@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
   <footer class="py-2 px-6" :class="containerMaxW">
     <BaseLevel>
       <div class="text-center">
-        <b>&copy;{{ year }}, Yuen Lye Yeap.</b>
+        <b>&copy;{{ year }}, Lye Yeap.</b>
         <slot />
       </div>
     </BaseLevel>

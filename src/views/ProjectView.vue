@@ -6,7 +6,6 @@ import ProjectInfoContainer from '@/components/Cashflow/ProjectInfoContainer.vue
 import CashflowChart from '@/components/Charts/CashflowChart.vue'
 import CashflowTable from '@/components/Charts/CashflowTable.vue'
 import ErrorCard from '@/components/ErrorCard.vue'
-import FormCheckRadio from '@/components/FormCheckRadio.vue'
 import SectionMain from '@/components/SectionMain.vue'
 import LoadingBackdrop from '@/components/utils/LoadingBackdrop.vue'
 import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue'

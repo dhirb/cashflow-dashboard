@@ -1,4 +1,5 @@
-const plugin = require('tailwindcss/plugin')
+import plugin from 'tailwindcss/plugin'
+import formsPlugin from '@tailwindcss/forms'
 
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -40,7 +41,7 @@ export default {
     }
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    formsPlugin,
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {

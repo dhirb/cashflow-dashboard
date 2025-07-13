@@ -38,7 +38,7 @@ const signIn = (email, password) => {
 const isUserSignedIn = async () => {
   try {
     return (await getCurrentUser()) !== null
-  } catch (error) {
+  } catch (_) {
     return false
   }
 }
