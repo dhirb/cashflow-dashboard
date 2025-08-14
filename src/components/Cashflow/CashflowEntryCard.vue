@@ -2,16 +2,12 @@
 import BaseButton from '@/components/BaseButton.vue'
 import CardBox from '@/components/CardBox.vue'
 import { SCHEDULE_FREQUENCY } from '@/const/schedule'
-import {
-  dateToHuman,
-  financialNumber,
-  formatScheduleMonthDay,
-  formatScheduleWeekday
-} from '@/services/utils/formatter'
+import { dateToHuman, financialNumber, formatScheduleMonthDay, formatScheduleWeekday } from '@/services/utils/formatter'
 import { pluralize } from '@/services/utils/string'
 import { mdiPencil, mdiTrashCan } from '@mdi/js'
+import FormToggleCheckbox from '@/components/form/FormToggleCheckbox.vue'
 
-const emit = defineEmits(['edit', 'delete'])
+const emit = defineEmits(['edit', 'update', 'delete'])
 const props = defineProps({
   entry: { type: Object, required: true }
 })
@@ -36,6 +32,10 @@ const formatRule = () => {
       return `Every ${pluralize(props.entry.interval, 'year', true)} on ${dateToHuman(`2024-${props.entry.byMonthOfYear}-${props.entry.byDayOfMonth}`, false, true)}`
   }
 }
+
+const onActiveToggle = (event) => {
+  emit('update', event)
+}
 </script>
 
 <template>
@@ -50,6 +50,12 @@ const formatRule = () => {
       <div class="flex justify-between">
         <p class="self-center">{{ props.entry.name }}</p>
         <div class="flex">
+          <FormToggleCheckbox
+            :checked="props.entry.isActive"
+            class="self-center"
+            @toggle="onActiveToggle"
+            label=""
+          />
           <BaseButton
             :icon="mdiPencil"
             outline

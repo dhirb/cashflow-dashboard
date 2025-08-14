@@ -16,6 +16,7 @@ import { useAuth } from './auth'
 import app from './init'
 import { DEFAULT_CASHFLOW_PROJECT } from '@/const/project'
 import { useCashflowStore } from '@/stores/cashflow'
+import { v7 as uuidv7 } from 'uuid'
 
 const auth = useAuth()
 const db = initializeFirestore(app, {
@@ -40,8 +41,9 @@ const getAllProjects = async () => {
         orderBy('updatedAt', 'desc')
       )
     )
+    const allProjects = snapshot.docs.flatMap((doc) => doc.data())
 
-    cashflowStore.setProjects(snapshot.docs.flatMap((doc) => doc.data()))
+    cashflowStore.setProjects(allProjects)
     cashflowStore.setError(null)
   } catch (error) {
     cashflowStore.setProjects([])
@@ -120,7 +122,7 @@ const addCashflowEntry = async (projectId, entry) => {
 
     const updatedBy = (await auth.getCurrentUser()).email
     await updateDoc(getProjectDocRef(projectId), {
-      entries: arrayUnion(entry),
+      entries: arrayUnion({ ...entry, id: uuidv7() }),
       updatedAt: new Date(),
       updatedBy
     })

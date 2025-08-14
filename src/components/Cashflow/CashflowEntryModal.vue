@@ -25,10 +25,12 @@ const cashflowStore = useCashflowStore()
 const { addCashflowEntry, updateCashflowEntry } = useDb()
 
 const form = reactive({
+  id: props.entry.id,
   name: props.entry.name,
   description: props.entry.description,
   isExpense: props.entry.isExpense,
   amount: props.entry.amount,
+  isActive: props.entry.isActive ?? true,
   isOneOff: props.entry.isOneOff,
   noEndDate: props.entry.noEndDate ?? true,
   start: props.entry.start ?? new Date(),
@@ -41,10 +43,12 @@ const form = reactive({
 })
 // Used when updating Firestore array
 const initialForm = reactive({
+  id: props.entry.id,
   name: props.entry.name,
   description: props.entry.description,
   isExpense: props.entry.isExpense,
   amount: props.entry.amount,
+  isActive: props.entry.isActive ?? true,
   isOneOff: props.entry.isOneOff,
   noEndDate: props.entry.noEndDate ?? true,
   start: props.entry.start ?? new Date(),
@@ -133,6 +137,12 @@ const onSave = async (event) => {
           :checked="form.isOneOff"
           class="self-center"
           @toggle="() => (form.isOneOff = !form.isOneOff)"
+        />
+        <FormToggleCheckbox
+          label="Active?"
+          :checked="form.isActive"
+          class="self-center"
+          @toggle="() => (form.isActive = !form.isActive)"
         />
       </FormField>
     </div>

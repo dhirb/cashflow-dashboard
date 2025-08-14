@@ -15,6 +15,7 @@ export const DEFAULT_CASHFLOW_ENTRY = {
   description: '',
   isExpense: true,
   amount: 0,
+  isActive: true,
   isOneOff: false,
   noEndDate: true,
   start: new Date(),

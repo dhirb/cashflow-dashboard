@@ -10,7 +10,7 @@ import { computed, ref } from 'vue'
 
 const cashflowStore = useCashflowStore()
 
-const { deleteCashflowEntry } = useDb()
+const { deleteCashflowEntry, updateCashflowEntry } = useDb()
 
 const showEntryModal = ref(false)
 const currentEntry = ref(null)
@@ -33,6 +33,12 @@ const addEntry = () => {
 const editEntry = (entry) => {
   currentEntry.value = entry
   showEntryModal.value = true
+}
+
+const updateEntryActiveToggle = async (entry) => {
+  const newEntry = { ...entry, isActive: !entry.isActive }
+  await updateCashflowEntry(cashflowStore.currentProject?.id, newEntry, entry)
+  currentEntry.value = newEntry
 }
 
 const deleteEntry = async (entry) => {
@@ -58,6 +64,7 @@ const deleteEntry = async (entry) => {
         :key="`entry-${index}`"
         :entry="entry"
         @edit="() => editEntry(entry)"
+        @update="() => updateEntryActiveToggle(entry)"
         @delete="() => deleteEntry(entry)"
       />
     </div>
