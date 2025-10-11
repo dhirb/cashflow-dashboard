@@ -2,7 +2,12 @@
 import BaseButton from '@/components/BaseButton.vue'
 import CardBox from '@/components/CardBox.vue'
 import { SCHEDULE_FREQUENCY } from '@/const/schedule'
-import { dateToHuman, financialNumber, formatScheduleMonthDay, formatScheduleWeekday } from '@/services/utils/formatter'
+import {
+  dateToHuman,
+  financialNumber,
+  formatScheduleMonthDay,
+  formatScheduleWeekday
+} from '@/services/utils/formatter'
 import { pluralize } from '@/services/utils/string'
 import { mdiPencil, mdiTrashCan } from '@mdi/js'
 import FormToggleCheckbox from '@/components/form/FormToggleCheckbox.vue'
