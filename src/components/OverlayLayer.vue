@@ -7,6 +7,10 @@ defineProps({
   type: {
     type: String,
     default: 'flex'
+  },
+  show: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -31,6 +35,7 @@ const overlayClick = (event) => {
       leave-to-class="opacity-0"
     >
       <div
+        v-if="show"
         class="overlay absolute inset-0 bg-linear-to-tr opacity-90 dark:from-gray-700 dark:via-gray-900 dark:to-gray-700"
         @click="overlayClick"
       />
@@ -41,7 +46,7 @@ const overlayClick = (event) => {
       enter-to-class="transform scale-100 opacity-100"
       leave-active-class="animate-fade-out"
     >
-      <slot />
+      <slot v-if="show" />
     </transition>
   </div>
 </template>

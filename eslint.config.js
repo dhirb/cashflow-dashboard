@@ -24,7 +24,10 @@ export default defineConfig([
   {
     rules: {
       // Allow unused variables starting with exactly one underscore.
-      'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }]
+      'no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }
+      ]
     }
   },
   js.configs.recommended,
