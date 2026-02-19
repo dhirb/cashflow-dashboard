@@ -1,26 +1,10 @@
 import js from '@eslint/js'
-import pluginVitest from '@vitest/eslint-plugin'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import pluginVue from 'eslint-plugin-vue'
-import { defineConfig } from 'eslint/config'
 import globals from 'globals'
+import pluginVue from 'eslint-plugin-vue'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  {
-    languageOptions: {
-      globals: {
-        ...globals.browser
-      }
-    }
-  },
-  {
-    name: 'app/files-to-lint',
-    files: ['**/*.{js,mjs,jsx,vue}']
-  },
-  {
-    name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**']
-  },
+  globalIgnores(['dist/', '**/*.cjs', '**/*.mjs']),
   {
     rules: {
       // Allow unused variables starting with exactly one underscore.
@@ -30,12 +14,11 @@ export default defineConfig([
       ]
     }
   },
-  js.configs.recommended,
-  ...pluginVue.configs['flat/essential'],
-
   {
-    ...pluginVitest.configs.recommended,
-    files: ['src/**/__tests__/*']
+    files: ['**/*.{js,mjs,cjs,vue}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    languageOptions: { globals: globals.browser }
   },
-  skipFormatting
+  pluginVue.configs['flat/essential']
 ])
