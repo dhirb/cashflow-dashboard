@@ -39,7 +39,7 @@ onUnmounted(() => {
 
     <SectionMain v-if="cashflowStore.currentProject">
       <ErrorCard v-if="cashflowStore.error">{{ cashflowStore.error }}</ErrorCard>
-      <div class="flex flex-col md:flex-row gap-4 w-full md:max-h-screen">
+      <div class="flex flex-col md:flex-row gap-4 w-full h-full">
         <div class="flex flex-col w-full">
           <ProjectInfoContainer />
           <BaseButtons type="justify-end" mb="mb-4" class-addon="">

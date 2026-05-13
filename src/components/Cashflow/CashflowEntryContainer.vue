@@ -53,7 +53,7 @@ const deleteEntry = async (entry) => {
     :as-new="JSON.stringify(currentEntry) === JSON.stringify(DEFAULT_CASHFLOW_ENTRY)"
     @close="() => (showEntryModal = false)"
   />
-  <div class="flex flex-col w-full md:w-1/3 gap-4 container overflow-y-auto">
+  <div class="flex flex-col w-full md:w-1/3 gap-4 overflow-y-auto h-full">
     <div class="flex justify-between w-full">
       <p>Entries</p>
       <BaseButton :icon="mdiPlus" @click.prevent="addEntry" />
@@ -70,9 +70,3 @@ const deleteEntry = async (entry) => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.container {
-  height: 48rem;
-}
-</style>

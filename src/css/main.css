@@ -11,3 +11,13 @@
 @import './styles/_white.css';
 
 @config '../../tailwind.config.js';
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+}
