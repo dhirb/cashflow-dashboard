@@ -1,6 +1,6 @@
 {
   "name": "cashflow-dashboard",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,28 +17,28 @@
     "@rschedule/standard-date-adapter": "^1.5.0",
     "chart.js": "^4.5.1",
     "chartjs-plugin-zoom": "^2.2.0",
-    "firebase": "^12.11.0",
+    "firebase": "^12.13.0",
     "hammerjs": "^2.0.8",
     "pinia": "^3.0.4",
-    "uuid": "^13.0.0",
-    "vue": "^3.5.32",
+    "uuid": "^14.0.0",
+    "vue": "^3.5.34",
     "vue-chartjs": "^5.3.3",
-    "vue-router": "^5.0.4"
+    "vue-router": "^5.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@vitejs/plugin-vue": "^6.0.5",
-    "@vitest/eslint-plugin": "^1.6.14",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vitest/eslint-plugin": "^1.6.17",
     "@vue/eslint-config-prettier": "^10.2.0",
-    "eslint": "^10.2.0",
-    "eslint-plugin-vue": "^10.8.0",
-    "globals": "^17.4.0",
-    "postcss": "^8.5.9",
-    "prettier": "^3.8.1",
-    "tailwindcss": "^4.2.2",
-    "vite": "^8.0.7",
-    "vitest": "^4.1.3"
+    "eslint": "^10.3.0",
+    "eslint-plugin-vue": "^10.9.1",
+    "globals": "^17.6.0",
+    "postcss": "^8.5.14",
+    "prettier": "^3.8.3",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.12",
+    "vitest": "^4.1.6"
   }
 }
